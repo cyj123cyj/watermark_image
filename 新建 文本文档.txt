@@ -1,0 +1,119 @@
+环境准备：（和许殊同师兄使用的是相同的环境）
+使用 
+pip install steganogan
+创建基本环境
+
+下面是环境全部的库即版本，可以按照下面的安装。(有很多是conda自带的库，对照添加即可)
+# Name                    Version                   Build  Channel
+_libgcc_mutex             0.1                        main  
+_openmp_mutex             5.1                       1_gnu  
+_pytorch_select           0.2                       gpu_0  
+astroid                   2.12.11                  pypi_0    pypi
+blas                      1.0                         mkl  
+ca-certificates           2022.10.11           h06a4308_0  
+certifi                   2022.9.24        py37h06a4308_0  
+cffi                      1.15.1           py37h74dc2b5_0  
+cudatoolkit               10.0.130                      0  
+cudnn                     7.6.5                cuda10.0_0  
+cv                        1.0.0                    pypi_0    pypi
+cycler                    0.11.0                   pypi_0    pypi
+dataclasses               0.6                      pypi_0    pypi
+dill                      0.3.5.1                  pypi_0    pypi
+flit-core                 3.6.0              pyhd3eb1b0_0  
+fonttools                 4.34.4                   pypi_0    pypi
+freetype                  2.12.1               h4a9f257_0  
+future                    0.18.2                   pypi_0    pypi
+giflib                    5.2.1                h7b6447c_0  
+imageio                   2.4.1                    pypi_0    pypi
+importlib-metadata        4.11.3           py37h06a4308_0    anaconda
+intel-openmp              2022.1.0          h9e868ea_3769  
+isort                     5.10.1                   pypi_0    pypi
+jpeg                      9e                   h7f8727e_0  
+kiwisolver                1.4.4                    pypi_0    pypi
+kornia                    0.6.8                    pypi_0    pypi
+lazy-object-proxy         1.7.1                    pypi_0    pypi
+lcms2                     2.12                 h3be6417_0  
+ld_impl_linux-64          2.38                 h1181459_1  
+lerc                      3.0                  h295c915_0  
+libdeflate                1.8                  h7f8727e_5  
+libffi                    3.3                  he6710b0_2  
+libgcc-ng                 11.2.0               h1234567_1  
+libgomp                   11.2.0               h1234567_1  
+libpng                    1.6.37               hbc83047_0  
+libstdcxx-ng              11.2.0               h1234567_1  
+libtiff                   4.4.0                hecacb30_2  
+libwebp                   1.2.4                h11a3e52_0  
+libwebp-base              1.2.4                h5eee18b_0  
+lz4-c                     1.9.3                h295c915_1  
+matplotlib                3.5.2                    pypi_0    pypi
+mccabe                    0.7.0                    pypi_0    pypi
+mkl                       2020.2                      256  
+mkl-service               2.3.0            py37he8ac12f_0  
+mkl_fft                   1.3.0            py37h54f3939_0  
+mkl_random                1.1.1            py37h0573a6f_0  
+ncurses                   6.3                  h5eee18b_3  
+ninja                     1.10.2               h06a4308_5  
+ninja-base                1.10.2               hd09550d_5  
+numpy                     1.21.6                   pypi_0    pypi
+numpy-base                1.19.2           py37hfa32c7d_0  
+nvidia-cublas-cu11        11.10.3.66               pypi_0    pypi
+nvidia-cuda-nvrtc-cu11    11.7.99                  pypi_0    pypi
+nvidia-cuda-runtime-cu11  11.7.99                  pypi_0    pypi
+nvidia-cudnn-cu11         8.5.0.96                 pypi_0    pypi
+opencv-python             4.6.0.66                 pypi_0    pypi
+openssl                   1.1.1s               h7f8727e_0  
+packaging                 21.3                     pypi_0    pypi
+pandas                    1.3.5                    pypi_0    pypi
+pillow                    9.2.0            py37hace64e9_1  
+pip                       22.3.1           py37h06a4308_0  
+platformdirs              2.5.2                    pypi_0    pypi
+pycparser                 2.21               pyhd3eb1b0_0  
+pylint                    2.15.4                   pypi_0    pypi
+pyparsing                 3.0.9                    pypi_0    pypi
+python                    3.7.13               h12debd9_0  
+python-dateutil           2.8.2                    pypi_0    pypi
+pytorch                   1.2.0           cuda100py37h938c94c_0  
+pytz                      2022.1                   pypi_0    pypi
+readline                  8.2                  h5eee18b_0  
+reedsolo                  0.3                      pypi_0    pypi
+scipy                     1.1.0                    pypi_0    pypi
+setuptools                65.5.0           py37h06a4308_0  
+six                       1.16.0             pyhd3eb1b0_1  
+sqlite                    3.40.0               h5082296_0  
+steganogan                0.1.3                    pypi_0    pypi
+tk                        8.6.12               h1ccaba5_0  
+tomli                     2.0.1                    pypi_0    pypi
+tomlkit                   0.11.5                   pypi_0    pypi
+torch                     1.13.0                   pypi_0    pypi
+torchvision               0.1.6                    pypi_0    pypi
+tqdm                      4.64.0                   pypi_0    pypi
+typed-ast                 1.5.4                    pypi_0    pypi
+typing_extensions         4.4.0            py37h06a4308_0  
+wheel                     0.37.1             pyhd3eb1b0_0  
+wrapt                     1.14.1                   pypi_0    pypi
+xz                        5.2.8                h5eee18b_0  
+zipp                      3.8.0            py37h06a4308_0  
+zlib                      1.2.13               h5eee18b_0  
+zstd                      1.5.2                ha4553b6_0  
+
+代码文件：
+（1）no JPEG，RGB Embedding文件夹
+train_dense.py  主函数
+Encoder.py 嵌入网络函数
+Extraction.py 提取网络函数
+loader.py 加载数据集函数
+
+（2）JPEG文件夹
+train_256huijpegcocoGAN.py  主函数
+Encoder256hui.py 嵌入网络函数
+Decoder256hui.py 提取网络函数
+critic.py 判别器函数
+loader.py 加载数据集函数
+
+数据集：
+使用COCO数据集（可到实验室的服务器拷贝）
+代码运行：
+切换到对应环境后使用
+Python train.py
+运行主函数即可
+
